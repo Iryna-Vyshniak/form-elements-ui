@@ -2,26 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* chrome */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* firefox */
+html {
+  scrollbar-width: none;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Comfortaa', sans-serif;
+    --background: hsl(210, 40%, 98%);
+    --foreground: hsl(210, 35%, 7%);
+    --card: hsl(210, 40%, 98%);
+    --card-foreground: hsl(209, 32%, 15%);
+    --popover: hsl(210, 40%, 98%);
+    --popover-foreground: hsl(210, 37%, 12%);
+    --primary: hsl(206, 53%, 12%);
+    --primary-foreground: hsl(0, 0%, 98%);
+    --secondary: hsl(210, 29%, 76%);
+    --secondary-foreground: hsl(206, 44%, 6%);
+    --muted: hsl(210, 25%, 78%);
+    --muted-foreground: hsl(210, 40%, 18%);
+    --accent: hsl(210, 31%, 60%);
+    --accent-foreground: hsl(206, 44%, 13%);
+    --success: hsl(130, 100%, 29%);
+    --danger: hsl(0, 80%, 50%);
+    --danger-foreground: hsl(0, 0%, 100%);
+    --border: hsl(206, 35%, 78%);
+    --input: hsl(213, 61%, 10%);
+    --ring: hsl(209, 15%, 48%);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --font-sans: 'Comfortaa', sans-serif;
+    --background: hsl(208, 54%, 7%);
+    --foreground: hsl(0, 0%, 96%);
+    --card: hsl(207, 24%, 16%);
+    --card-foreground: hsl(0, 0%, 98%);
+    --popover: hsl(206, 21%, 15%);
+    --popover-foreground: hsl(0, 0%, 98%);
+    --primary: hsl(0, 0%, 98%);
+    --primary-foreground: hsl(207, 42%, 9%);
+    --secondary: hsl(210, 36%, 10%);
+    --secondary-foreground: hsl(0, 0%, 98%);
+    --muted: hsl(206, 27%, 15%);
+    --muted-foreground: hsl(210, 15%, 50%);
+    --accent: hsl(210, 31%, 60%);
+    --accent-foreground: hsl(206, 44%, 13%);
+    --success: hsl(130, 100%, 29%);
+    --success-foreground: hsl(0, 0%, 98%);
+    --danger: hsl(0, 80%, 50%);
+    --danger-foreground: hsl(0, 0%, 100%);
+    --border: hsl(211, 70%, 6%);
+    --input: hsl(210, 100%, 15%);
+    --ring: hsl(209, 19%, 43%);
+  }
+
+  /* Remove scrollbar */
+  .remove-scrollbar {
+    -ms-overflow-style: none; /* for Internet Explorer and Edge */
+    scrollbar-width: none; /* for Firefox */
+  }
+
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .footer {
+    @apply mt-16 border-t-[.0625rem] border-slate-300 px-4 py-2 shadow-sm sm:px-6;
+  }
+
+  .custom-transition {
+    @apply transition-all duration-300 ease-in-out;
   }
 }
