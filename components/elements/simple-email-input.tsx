@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import * as motion from 'framer-motion/client';
+
 import { validateEmail } from '@/lib/utils';
 
 import Input from '../ui/input';
@@ -9,7 +11,12 @@ import Label from '../ui/label';
 
 const SimpleEmailInput = () => {
   return (
-    <div className='space-y-2'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.5 }}
+      className='space-y-2'
+    >
       <Label htmlFor='email'>Email</Label>
       <Input
         id='email'
@@ -17,7 +24,7 @@ const SimpleEmailInput = () => {
         type='email'
         validate={validateEmail}
       />
-    </div>
+    </motion.div>
   );
 };
 

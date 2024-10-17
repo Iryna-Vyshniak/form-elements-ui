@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import * as motion from 'framer-motion/client';
+
 import { validateEmail } from '@/lib/utils';
 
 import Input from '../ui/input';
@@ -9,7 +11,12 @@ import Label from '../ui/label';
 
 const RequiredInput = () => {
   return (
-    <div className='space-y-2'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.4, duration: 0.5 }}
+      className='space-y-2'
+    >
       <Label htmlFor='required-input'>
         Required input <span className='text-danger'>*</span>
       </Label>
@@ -20,7 +27,7 @@ const RequiredInput = () => {
         required
         validate={validateEmail}
       />
-    </div>
+    </motion.div>
   );
 };
 
