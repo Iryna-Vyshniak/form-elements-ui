@@ -108,6 +108,11 @@ body {
 }
 
 @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+    text-shadow: 0.02rem 0.02rem 0.02rem var(--ring);
+  }
+
   .footer {
     @apply mt-16 border-t-[.0625rem] border-slate-300 px-4 py-2 shadow-sm sm:px-6;
   }
