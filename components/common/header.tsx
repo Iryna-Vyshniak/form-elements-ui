@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
+import Logo from './logo';
+
 const ThemeToggle = dynamic(() => import('./theme-toggle'));
 
 const Header = () => {
@@ -13,9 +15,9 @@ const Header = () => {
           aria-label='Home'
           className='custom-transition peer-focus-visible:ring-ring/20 relative inline-flex cursor-pointer items-center justify-center rounded-lg border border-transparent bg-accent p-2 ring-offset-background transition-shadow focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2'
         >
-          <span className='custom-transition text-background-foreground font-bold hover:text-background focus:text-accent-foreground'>
-            El.UI
-          </span>
+          <Logo fontSize={0.5} radius={4} text=' form • elements • ui • ' />
+
+          <span className='custom-transition text-background-foreground font-bold hover:text-background focus:text-accent-foreground'></span>
         </Link>
         <nav>
           <ThemeToggle />
