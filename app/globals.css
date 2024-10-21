@@ -77,6 +77,13 @@ body {
     --ring: hsl(209, 19%, 43%);
   }
 
+  /* Hide the eye icon in the password fields */
+  input[type="password"]::-ms-reveal, /* For Internet Explorer */
+input[type="password"]::-ms-clear, /* For Internet Explorer */
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+  }
+
   /* Remove scrollbar */
   .remove-scrollbar {
     -ms-overflow-style: none; /* for Internet Explorer and Edge */
