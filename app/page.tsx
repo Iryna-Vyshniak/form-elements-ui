@@ -3,6 +3,7 @@ import * as motion from 'framer-motion/client';
 import { BLUR_VARIANT } from '@/lib/motion-variants';
 
 import Logo from '@/components/common/logo';
+import InputPasswordStrength from '@/components/elements/input-password-strength';
 import InputWithHelper from '@/components/elements/input-with-helper';
 import RequiredInput from '@/components/elements/required-input';
 import SimpleEmailInput from '@/components/elements/simple-email-input';
@@ -13,12 +14,12 @@ export default function Home() {
     <>
       <motion.div
         initial={{ top: '0%' }}
-        animate={{ top: '-100%' }}
-        transition={{ duration: 20, delay: 0.8, ease: 'easeInOut' }}
+        animate={{ top: '-200%' }}
+        transition={{ duration: 10, ease: 'linear' }}
         className='absolute top-0 z-[100] flex h-screen w-screen items-center justify-center bg-accent'
       >
         <Logo
-          fontSize={1.2}
+          fontSize={1.7}
           radius={7}
           itemVariant={BLUR_VARIANT}
           text='form • elements • ui • '
@@ -29,6 +30,7 @@ export default function Home() {
         <RequiredInput />
         <InputWithHelper />
         <TagInput />
+        <InputPasswordStrength />
       </main>
     </>
   );
